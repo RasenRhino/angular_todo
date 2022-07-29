@@ -1,0 +1,27 @@
+<div class='doing'>
+    doing<br>
+      <li *ngFor="let task of taskList">
+        <input type="checkbox" id="{{task.id}}" value="{{task.name}}" (change)="markDone($event,task.id)" >
+         <label for="{{task.id}}">{{task.name}}</label><br>
+       <button (click)="Delete(task.id)">delete {{task.id}}</button>   
+  </li>
+   
+   
+  <input [(ngModel)]="mytask">
+  <button (click)="newTask()">new task</button>   
+  <br>
+  <br>
+   
+  <p>
+      done tasks
+  </p>
+  <div class='done'>
+  <li *ngFor="let task of doneTask">
+      <input type="checkbox" id="{{task.id}}" [checked]="donecheck"  (change)="markUndone($event,task.id)">
+       <label for="vehicle1">{{task.name}}</label><br>
+     <button (click)="Delete(task.id)">delete {{task.id}}</button>   
+  </li>
+  </div>
+  </div>
+   
+  
